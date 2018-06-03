@@ -62,6 +62,80 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-机器学习——泰坦尼克号幸存分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/03/机器学习——泰坦尼克号幸存分析/" class="article-date">
+  <time datetime="2018-06-03T09:02:14.589Z" itemprop="datePublished">2018-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/03/机器学习——泰坦尼克号幸存分析/">机器学习——泰坦尼克号幸存分析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在kaggle上面（看着lintcode的中文翻译）做了泰坦尼克号幸存者预测的机器学习案例。<br>【可惜我现在还不会向这个页面添加图片】<br>我们可以看到，在train.csv文件中，有共计891名乘客的数据，每名乘客有12个信息。<br>在这其中，Age信息少量缺失，Cabin信息大量缺失。<br>因此，我将Cabin信息排除在考虑范围外，而将Age信息用平均数补全。<br>首先使用python的csv库将csv文件读取出来，并将每个人的信息使用字典存储，并放入列表中。<br>选取了Pclass，Sex, Age, SibSp, Parch, Fare, Embarked作为影响因素考虑。<br>对Pclass，Sex，Embarked使用one-hot（独热编码），而对于Age， SibSP，Parch，Fare则将整个区间均匀压缩成0到1之间。<br>随后使用knn算法进行处理，在k为7的时候达到了0.77511的正确率。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/03/机器学习——泰坦尼克号幸存分析/" data-id="cjhymgf3o0000xouftg5ikbfk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-动态规划学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/03/动态规划学习/" class="article-date">
+  <time datetime="2018-06-03T07:19:31.457Z" itemprop="datePublished">2018-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/03/动态规划学习/">动态规划学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>动态规划学习</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/03/动态规划学习/" data-id="cjhymgf450002xoufg8rm5713" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/20/test/" class="article-date">
@@ -89,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/20/test/" data-id="cjhe8gqw9000068uf1slhpzwv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/20/test/" data-id="cjhymgf420001xoufr38v4onc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -134,7 +208,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/20/hello-world/" data-id="cjhe8gqwm000168ufvcfa7zq6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/20/hello-world/" data-id="cjhymgf460003xouf204gl04a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -162,7 +236,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li></ul>
     </div>
   </div>
 
@@ -173,6 +247,14 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/06/03/机器学习——泰坦尼克号幸存分析/">机器学习——泰坦尼克号幸存分析</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/03/动态规划学习/">动态规划学习</a>
+          </li>
         
           <li>
             <a href="/2018/05/20/test/">test</a>

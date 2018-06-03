@@ -5,19 +5,19 @@
   
 
   
-  <title>test | Sur_Ring Blog</title>
+  <title>机器学习——泰坦尼克号幸存分析 | Sur_Ring Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="呜哇，真难受，新建的网页不会出现在public里面，结果发现新建的网页下面会有标题，日期，标签三个内容，我看到自带网页里面只有1个标题，果断删掉了另外两个，于是就正常了">
+  <meta name="description" content="今天在kaggle上面（看着lintcode的中文翻译）做了泰坦尼克号幸存者预测的机器学习案例。【可惜我现在还不会向这个页面添加图片】我们可以看到，在train.csv文件中，有共计891名乘客的数据，每名乘客有12个信息。在这其中，Age信息少量缺失，Cabin信息大量缺失。因此，我将Cabin信息排除在考虑范围外，而将Age信息用平均数补全。首先使用python的csv库将csv文件读取出来，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://yoursite.com/2018/05/20/test/index.html">
+<meta property="og:title" content="机器学习——泰坦尼克号幸存分析">
+<meta property="og:url" content="http://yoursite.com/2018/06/03/机器学习——泰坦尼克号幸存分析/index.html">
 <meta property="og:site_name" content="Sur_Ring Blog">
-<meta property="og:description" content="呜哇，真难受，新建的网页不会出现在public里面，结果发现新建的网页下面会有标题，日期，标签三个内容，我看到自带网页里面只有1个标题，果断删掉了另外两个，于是就正常了">
+<meta property="og:description" content="今天在kaggle上面（看着lintcode的中文翻译）做了泰坦尼克号幸存者预测的机器学习案例。【可惜我现在还不会向这个页面添加图片】我们可以看到，在train.csv文件中，有共计891名乘客的数据，每名乘客有12个信息。在这其中，Age信息少量缺失，Cabin信息大量缺失。因此，我将Cabin信息排除在考虑范围外，而将Age信息用平均数补全。首先使用python的csv库将csv文件读取出来，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-20T02:54:51.333Z">
+<meta property="og:updated_time" content="2018-06-03T09:23:15.509Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description" content="呜哇，真难受，新建的网页不会出现在public里面，结果发现新建的网页下面会有标题，日期，标签三个内容，我看到自带网页里面只有1个标题，果断删掉了另外两个，于是就正常了">
+<meta name="twitter:title" content="机器学习——泰坦尼克号幸存分析">
+<meta name="twitter:description" content="今天在kaggle上面（看着lintcode的中文翻译）做了泰坦尼克号幸存者预测的机器学习案例。【可惜我现在还不会向这个页面添加图片】我们可以看到，在train.csv文件中，有共计891名乘客的数据，每名乘客有12个信息。在这其中，Age信息少量缺失，Cabin信息大量缺失。因此，我将Cabin信息排除在考虑范围外，而将Age信息用平均数补全。首先使用python的csv库将csv文件读取出来，">
   
     <link rel="alternate" href="/atom.xml" title="Sur_Ring Blog" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-机器学习——泰坦尼克号幸存分析" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/20/test/" class="article-date">
-  <time datetime="2018-05-20T02:21:06.801Z" itemprop="datePublished">2018-05-20</time>
+    <a href="/2018/06/03/机器学习——泰坦尼克号幸存分析/" class="article-date">
+  <time datetime="2018-06-03T09:02:14.589Z" itemprop="datePublished">2018-06-03</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      test
+      机器学习——泰坦尼克号幸存分析
     </h1>
   
 
@@ -86,12 +86,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>呜哇，真难受，新建的网页不会出现在public里面，结果发现新建的网页下面会有标题，日期，标签三个内容，我看到自带网页里面只有1个标题，果断删掉了另外两个，于是就正常了</p>
+        <p>今天在kaggle上面（看着lintcode的中文翻译）做了泰坦尼克号幸存者预测的机器学习案例。<br>【可惜我现在还不会向这个页面添加图片】<br>我们可以看到，在train.csv文件中，有共计891名乘客的数据，每名乘客有12个信息。<br>在这其中，Age信息少量缺失，Cabin信息大量缺失。<br>因此，我将Cabin信息排除在考虑范围外，而将Age信息用平均数补全。<br>首先使用python的csv库将csv文件读取出来，并将每个人的信息使用字典存储，并放入列表中。<br>选取了Pclass，Sex, Age, SibSp, Parch, Fare, Embarked作为影响因素考虑。<br>对Pclass，Sex，Embarked使用one-hot（独热编码），而对于Age， SibSP，Parch，Fare则将整个区间均匀压缩成0到1之间。<br>随后使用knn算法进行处理，在k为7的时候达到了0.77511的正确率。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/20/test/" data-id="cjhymgf420001xoufr38v4onc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/03/机器学习——泰坦尼克号幸存分析/" data-id="cjhymgf3o0000xouftg5ikbfk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -100,19 +100,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/06/03/动态规划学习/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          动态规划学习
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/20/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/06/03/动态规划学习/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">动态规划学习</div>
     </a>
   
 </nav>
