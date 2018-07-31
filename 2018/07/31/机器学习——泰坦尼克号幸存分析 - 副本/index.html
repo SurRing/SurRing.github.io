@@ -5,19 +5,19 @@
   
 
   
-  <title>机器学习——泰坦尼克号幸存分析 | Sur_Ring Blog</title>
+  <title>机器学习实战笔记——朴素贝叶斯分类 | Sur_Ring Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天在kaggle上面（看着lintcode的中文翻译）做了泰坦尼克号幸存者预测的机器学习案例。【可惜我现在还不会向这个页面添加图片】我们可以看到，在train.csv文件中，有共计891名乘客的数据，每名乘客有12个信息。在这其中，Age信息少量缺失，Cabin信息大量缺失。因此，我将Cabin信息排除在考虑范围外，而将Age信息用平均数补全。首先使用python的csv库将csv文件读取出来，">
+  <meta name="description" content="根据贝叶斯准则：P(事件A|事件B) = P(事件B|事件A)P(事件A)/P(事件B)即当事件B发生时发生事件A的概率等于事件A发生时发生事件B的概率乘以发生事件A的概率除以发生事件B的概率并且有条件独立性假设：P(w1w2w3……wi|ci)=P(w1|ci)P(w2|ci)P(w3|ci)……P(wi|ci)即当事件c的第i种情况发生时发生事件w的所有特征的概率等于当事件c的第i种情况发生时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习——泰坦尼克号幸存分析">
-<meta property="og:url" content="http://yoursite.com/2018/06/03/机器学习——泰坦尼克号幸存分析/index.html">
+<meta property="og:title" content="机器学习实战笔记——朴素贝叶斯分类">
+<meta property="og:url" content="http://yoursite.com/2018/07/31/机器学习——泰坦尼克号幸存分析 - 副本/index.html">
 <meta property="og:site_name" content="Sur_Ring Blog">
-<meta property="og:description" content="今天在kaggle上面（看着lintcode的中文翻译）做了泰坦尼克号幸存者预测的机器学习案例。【可惜我现在还不会向这个页面添加图片】我们可以看到，在train.csv文件中，有共计891名乘客的数据，每名乘客有12个信息。在这其中，Age信息少量缺失，Cabin信息大量缺失。因此，我将Cabin信息排除在考虑范围外，而将Age信息用平均数补全。首先使用python的csv库将csv文件读取出来，">
+<meta property="og:description" content="根据贝叶斯准则：P(事件A|事件B) = P(事件B|事件A)P(事件A)/P(事件B)即当事件B发生时发生事件A的概率等于事件A发生时发生事件B的概率乘以发生事件A的概率除以发生事件B的概率并且有条件独立性假设：P(w1w2w3……wi|ci)=P(w1|ci)P(w2|ci)P(w3|ci)……P(wi|ci)即当事件c的第i种情况发生时发生事件w的所有特征的概率等于当事件c的第i种情况发生时">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-03T09:23:15.509Z">
+<meta property="og:updated_time" content="2018-07-31T04:19:53.731Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习——泰坦尼克号幸存分析">
-<meta name="twitter:description" content="今天在kaggle上面（看着lintcode的中文翻译）做了泰坦尼克号幸存者预测的机器学习案例。【可惜我现在还不会向这个页面添加图片】我们可以看到，在train.csv文件中，有共计891名乘客的数据，每名乘客有12个信息。在这其中，Age信息少量缺失，Cabin信息大量缺失。因此，我将Cabin信息排除在考虑范围外，而将Age信息用平均数补全。首先使用python的csv库将csv文件读取出来，">
+<meta name="twitter:title" content="机器学习实战笔记——朴素贝叶斯分类">
+<meta name="twitter:description" content="根据贝叶斯准则：P(事件A|事件B) = P(事件B|事件A)P(事件A)/P(事件B)即当事件B发生时发生事件A的概率等于事件A发生时发生事件B的概率乘以发生事件A的概率除以发生事件B的概率并且有条件独立性假设：P(w1w2w3……wi|ci)=P(w1|ci)P(w2|ci)P(w3|ci)……P(wi|ci)即当事件c的第i种情况发生时发生事件w的所有特征的概率等于当事件c的第i种情况发生时">
   
     <link rel="alternate" href="/atom.xml" title="Sur_Ring Blog" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-机器学习——泰坦尼克号幸存分析" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-机器学习——泰坦尼克号幸存分析 - 副本" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/06/03/机器学习——泰坦尼克号幸存分析/" class="article-date">
-  <time datetime="2018-06-03T09:02:14.589Z" itemprop="datePublished">2018-06-03</time>
+    <a href="/2018/07/31/机器学习——泰坦尼克号幸存分析 - 副本/" class="article-date">
+  <time datetime="2018-07-31T03:42:58.648Z" itemprop="datePublished">2018-07-31</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      机器学习——泰坦尼克号幸存分析
+      机器学习实战笔记——朴素贝叶斯分类
     </h1>
   
 
@@ -86,12 +86,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天在kaggle上面（看着lintcode的中文翻译）做了泰坦尼克号幸存者预测的机器学习案例。<br>【可惜我现在还不会向这个页面添加图片】<br>我们可以看到，在train.csv文件中，有共计891名乘客的数据，每名乘客有12个信息。<br>在这其中，Age信息少量缺失，Cabin信息大量缺失。<br>因此，我将Cabin信息排除在考虑范围外，而将Age信息用平均数补全。<br>首先使用python的csv库将csv文件读取出来，并将每个人的信息使用字典存储，并放入列表中。<br>选取了Pclass，Sex, Age, SibSp, Parch, Fare, Embarked作为影响因素考虑。<br>对Pclass，Sex，Embarked使用one-hot（独热编码），而对于Age， SibSP，Parch，Fare则将整个区间均匀压缩成0到1之间。<br>随后使用knn算法进行处理，在k为7的时候达到了0.77511的正确率。</p>
+        <p>根据贝叶斯准则：P(事件A|事件B) = P(事件B|事件A)P(事件A)/P(事件B)<br>即当事件B发生时发生事件A的概率等于事件A发生时发生事件B的概率乘以发生事件A的概率除以发生事件B的概率<br>并且有条件独立性假设：P(w1w2w3……wi|ci)=P(w1|ci)P(w2|ci)P(w3|ci)……P(wi|ci)<br>即当事件c的第i种情况发生时发生事件w的所有特征的概率等于当事件c的第i种情况发生时发生事件w的每一个特征的概率之积，例如下雨的时候我开着（开着或关着）空调在QQ（QQ或微信）上聊天的概率等于下雨（事件c的某一种情况）的时候我开着空调的概率乘以下雨（事件c的某一种情况）的时候我在QQ上聊天的概率<br>因此我们将留言分为正常言论和侮辱性言论，得到P(留言为侮辱性言论)<br>然后根据出现在侮辱性言论和正常言论中的概率获得词语的P(含有该词语|为侮辱性言论)以及P(含有该词语)<br>那么P(为侮辱性言论|含有词语ci)=P(含有词语ci|为侮辱性言论)P(为侮辱性言论)/P(含有词语ci)<br>推出P(为侮辱性言论|含有词语ci)=[P(含有词语c1|为侮辱性言论)……P(含有词语ci|为侮辱性言论)]P(为侮辱性言论)/[P(含有词语c1)…….P(含有词语ci)]<br>这个式子中的所有数据我们都已经得到了，此时我们就完成了根据出现在留言中的词语判断该留言是否是侮辱性言论的朴素贝叶斯分类</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/03/机器学习——泰坦尼克号幸存分析/" data-id="cjk972pan0006vcuffcwfhsii" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/31/机器学习——泰坦尼克号幸存分析 - 副本/" data-id="cjk972p820001vcufgc7lxiwg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -100,19 +100,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/07/13/selenium webdriver无法打开浏览器的问题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          selenium webdriver无法打开浏览器的问题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/06/03/动态规划学习/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/07/13/爬虫爬取qq空间/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">动态规划学习</div>
+      <div class="article-nav-title">test</div>
     </a>
   
 </nav>
