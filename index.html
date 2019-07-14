@@ -62,228 +62,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-机器学习实战——朴素贝叶斯分类" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/31/机器学习实战——朴素贝叶斯分类/" class="article-date">
-  <time datetime="2018-07-31T03:42:58.648Z" itemprop="datePublished">2018-07-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/31/机器学习实战——朴素贝叶斯分类/">机器学习实战笔记——朴素贝叶斯分类</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>根据贝叶斯准则：P(事件A|事件B) = P(事件B|事件A)P(事件A)/P(事件B)<br>即当事件B发生时发生事件A的概率等于事件A发生时发生事件B的概率乘以发生事件A的概率除以发生事件B的概率<br>并且有条件独立性假设：P(w1w2w3……wi|ci)=P(w1|ci)P(w2|ci)P(w3|ci)……P(wi|ci)<br>即当事件c的第i种情况发生时发生事件w的所有特征的概率等于当事件c的第i种情况发生时发生事件w的每一个特征的概率之积，例如下雨的时候我开着（开着或关着）空调在QQ（QQ或微信）上聊天的概率等于下雨（事件c的某一种情况）的时候我开着空调的概率乘以下雨（事件c的某一种情况）的时候我在QQ上聊天的概率<br>因此我们将留言分为正常言论和侮辱性言论，得到P(留言为侮辱性言论)<br>然后根据出现在侮辱性言论和正常言论中的概率获得词语的P(含有该词语|为侮辱性言论)以及P(含有该词语)<br>那么P(为侮辱性言论|含有词语ci)=P(含有词语ci|为侮辱性言论)P(为侮辱性言论)/P(含有词语ci)<br>推出P(为侮辱性言论|含有词语ci)=[P(含有词语c1|为侮辱性言论)……P(含有词语ci|为侮辱性言论)]P(为侮辱性言论)/[P(含有词语c1)…….P(含有词语ci)]<br>这个式子中的所有数据我们都已经得到了，此时我们就完成了根据出现在留言中的词语判断该留言是否是侮辱性言论的朴素贝叶斯分类</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/31/机器学习实战——朴素贝叶斯分类/" data-id="cjk9785cp00047guf8wy9ap3a" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-爬虫爬取qq空间" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/13/爬虫爬取qq空间/" class="article-date">
-  <time datetime="2018-07-13T07:33:08.436Z" itemprop="datePublished">2018-07-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/13/爬虫爬取qq空间/">test</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这次试着用selenium爬取QQ空间，但是在一开始就遇到了难题<br>教程中使用的qq空间控件id已经被修改了，我在f12中搜索‘帐号密码登录’结果找不到这个按钮，只能搜索‘注册新帐号’然后在旁边看到了‘帐号密码登录’的id：switcher_plogin。不过登录窗口还是login_frame<br>帐号密码输入的窗口还是u和p，依然用driver.find_element_by_id(‘u’).send_keys(user)就可以了，然后再点击登录按钮driver.find_element_by_id(‘login_button’).click()</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/13/爬虫爬取qq空间/" data-id="cjk9785cq00057gufgvo2ad3f" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-selenium webdriver无法打开浏览器的问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/13/selenium webdriver无法打开浏览器的问题/" class="article-date">
-  <time datetime="2018-07-13T07:10:05.586Z" itemprop="datePublished">2018-07-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/13/selenium webdriver无法打开浏览器的问题/">selenium webdriver无法打开浏览器的问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本来跟着教程学python爬虫来着，结果一开始就出错，显示找不到Chromedriver，修改环境变量也没有用，最后果然还是只能把Chromedriver和.py文件放在一起了，结果又发现无法打开网页，看到有人说是版本不匹配的问题，然后打开下载界面一看，好家伙，这是按字符串大小排序的，2.5比2.40大，怪不得我下的最后一个会版本不匹配，换成最新版本之后就能打开网页了</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/13/selenium webdriver无法打开浏览器的问题/" data-id="cjk9785cd00007gufylumhfnp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-机器学习——泰坦尼克号幸存分析" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/03/机器学习——泰坦尼克号幸存分析/" class="article-date">
-  <time datetime="2018-06-03T09:02:14.589Z" itemprop="datePublished">2018-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/03/机器学习——泰坦尼克号幸存分析/">机器学习——泰坦尼克号幸存分析</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天在kaggle上面（看着lintcode的中文翻译）做了泰坦尼克号幸存者预测的机器学习案例。<br>【可惜我现在还不会向这个页面添加图片】<br>我们可以看到，在train.csv文件中，有共计891名乘客的数据，每名乘客有12个信息。<br>在这其中，Age信息少量缺失，Cabin信息大量缺失。<br>因此，我将Cabin信息排除在考虑范围外，而将Age信息用平均数补全。<br>首先使用python的csv库将csv文件读取出来，并将每个人的信息使用字典存储，并放入列表中。<br>选取了Pclass，Sex, Age, SibSp, Parch, Fare, Embarked作为影响因素考虑。<br>对Pclass，Sex，Embarked使用one-hot（独热编码），而对于Age， SibSP，Parch，Fare则将整个区间均匀压缩成0到1之间。<br>随后使用knn算法进行处理，在k为7的时候达到了0.77511的正确率。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/03/机器学习——泰坦尼克号幸存分析/" data-id="cjk9785cs00067gufycccqkc3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-动态规划学习" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/03/动态规划学习/" class="article-date">
-  <time datetime="2018-06-03T07:19:31.457Z" itemprop="datePublished">2018-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/03/动态规划学习/">动态规划学习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>动态规划学习——正在学习，毫无进展</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/03/动态规划学习/" data-id="cjk9785co00037guf32s5v2fy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/20/test/" class="article-date">
-  <time datetime="2018-05-20T02:21:06.801Z" itemprop="datePublished">2018-05-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/20/test/">test</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>呜哇，真难受，新建的网页不会出现在public里面，结果发现新建的网页下面会有标题，日期，标签三个内容，我看到自带网页里面只有1个标题，果断删掉了另外两个，于是就正常了</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/20/test/" data-id="cjk9785cn00027gufo4m1v84w" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/20/hello-world/" class="article-date">
@@ -319,7 +97,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/20/hello-world/" data-id="cjk9785ck00017gufcnwd8nn7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/20/hello-world/" data-id="cjy2nbrcz0000xcufqsxsggmq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -347,7 +125,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li></ul>
     </div>
   </div>
 
@@ -360,23 +138,7 @@
       <ul>
         
           <li>
-            <a href="/2018/07/31/机器学习实战——朴素贝叶斯分类/">机器学习实战笔记——朴素贝叶斯分类</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/13/爬虫爬取qq空间/">test</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/13/selenium webdriver无法打开浏览器的问题/">selenium webdriver无法打开浏览器的问题</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/03/机器学习——泰坦尼克号幸存分析/">机器学习——泰坦尼克号幸存分析</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/03/动态规划学习/">动态规划学习</a>
+            <a href="/2018/05/20/hello-world/">Hello World</a>
           </li>
         
       </ul>
@@ -391,7 +153,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 Sur_Ring<br>
+      &copy; 2019 Sur_Ring<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
