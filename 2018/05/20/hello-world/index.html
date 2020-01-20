@@ -1,13 +1,115 @@
 <!DOCTYPE html>
-<html>
-<head>
-<!-- QQCard BEGIN -->
-<meta itemprop="name" content="标题">
-<meta itemprop="image" content="图片">
-<meta name="description" itemprop="description" content="描述">
-<!-- QQCard END -->
-</head>
+<html style="height: 100%; font-size: 75px;" lang="zh-CN"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="always" name="referrer">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>打卡页面</title>
+    <meta name="description" content="打卡页面">
+    <link rel="stylesheet" href="%E6%89%93%E5%8D%A1%E9%A1%B5%E9%9D%A2_files/style.css"><meta name="keywords" content="打卡页面">
+    
+    <script>
+      !(function(doc,win){
+        "use strict";
+        // rem响应式兼容设备，必须放顶部，不然页面抖动厉害
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+              var clientWidth = docEl.clientWidth;
+              if (!clientWidth) return;
+              docEl.style.fontSize = Math.floor(16 * (clientWidth / 320)) + 'px';
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        recalc();
+      }(document,window));
 
-<body>
-</body>
-</html>
+        function onDownloadClick() {
+          try {
+            var req = new XMLHttpRequest();
+            req.timeout = 1500;
+            req.overrideMimeType('text/plain');
+            req.onreadystatechange = function () {
+              switch (req.readyState) {
+                case 4:
+                  window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.jiongji.andriod.card";
+                  break;
+                case 1:
+                  req.setRequestHeader('Content-Type', 'text/plain; charset=utf-8');
+                  break;
+              }
+            }.bind(this);
+            req.open('GET', 'http://www.baicizhan.com/' + new Date().getTime() + '/daka_download?qr=false&weixin=false', true);
+            req.send(null);
+          } catch (e) {
+            window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.jiongji.andriod.card";
+          }
+        }
+    </script>
+  </head>
+  <body style="height: 100%">
+
+    <!--[if lte IE 9]>
+      <p class="browser-tips">
+        你正在使用一个<strong>过时</strong>的浏览器。请<a href="http://browsehappy.com" target="_blank">升级你的浏览器</a>以查看本页面。
+      </p>
+    <![endif]-->
+
+    <div style="height: 30px;">
+
+    </div>
+    <section class="record" style="margin-top: 0;">
+      <h2 class="title">我用百词斩的记忆法</h2>
+      <div class="item">
+        <h3>今日过招单词</h3>
+        <p id="today" class="num-roll" data-num="666"><div class="num"><div class="box" data-num="3" style="top: -6rem;"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div></div><div class="num"><div class="box" data-num="1" style="top: -2rem;"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div></div><div class="num"><div class="box" data-num="2" style="top: -4rem;"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div></div></p>
+      </div>
+      <div class="item">
+        <h3>已坚持天数</h3>
+        <p id="days" class="num-roll" data-num="666"><div class="num"><div class="box" data-num="5" style="top: -10rem;"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div></div></p>
+      </div>
+    </section>
+
+    <section id="carousel" class="carousel">
+        <ol class="carousel-indicators"><li data-slide-to="0" class=""></li><li data-slide-to="1" class="active"></li><li data-slide-to="2" class=""></li><li data-slide-to="3" class=""></li></ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="item hide-right">
+            <img src="%E6%89%93%E5%8D%A1%E9%A1%B5%E9%9D%A2_files/292e77734872.jpg">
+          </div>
+          <div class="item active-right">
+            <img src="%E6%89%93%E5%8D%A1%E9%A1%B5%E9%9D%A2_files/41788706688f.jpg">
+          </div>
+          <div class="item old-in-left">
+            <img src="%E6%89%93%E5%8D%A1%E9%A1%B5%E9%9D%A2_files/bc91d565d39c.jpg">
+          </div>
+          <div class="item old-hide-right">
+            <img src="%E6%89%93%E5%8D%A1%E9%A1%B5%E9%9D%A2_files/1fd22f818d6b.jpg">
+          </div>
+        </div>
+    </section>
+    <div style="position: absolute; bottom: -5px;">
+      <a href="javascript:onDownloadClick();" id="downloadBtn">
+        <img src="%E6%89%93%E5%8D%A1%E9%A1%B5%E9%9D%A2_files/daka_download.png" style="width: 100%">
+      </a>
+    </div>
+
+    <script>
+      var statInfo={
+        stat:{
+          opname: "weixin_daka_all",
+          onBottom: false
+        },
+        download:{
+          ios:"http://www.baicizhan.com/down_ios?source=daka&toname=qzone",
+          android:"http://www.baicizhan.com/down_android?source=daka&toname=qzone"
+        }
+      }
+    </script>
+    
+    <script src="%E6%89%93%E5%8D%A1%E9%A1%B5%E9%9D%A2_files/bcz.js"></script>
+    <script src="%E6%89%93%E5%8D%A1%E9%A1%B5%E9%9D%A2_files/main.js"></script>
+  
+
+<iframe id="mc-sidebar-container" style="top: 0px; padding: 0px; margin: 0px; z-index: 2147483646; position: fixed; border: medium none; opacity: 0; left: auto; right: 0px; display: block; max-width: none; transition: width 0s ease 0.4s, height 0s ease 0.4s, opacity 0.4s ease 0s, transform 0.4s ease 0s; transform: translate3d(400px, 0px, 0px); width: 400px; height: 0px;"></iframe><iframe id="mc-topbar-container" style="top: 0px; padding: 0px; margin: 0px; z-index: 2147483646; position: fixed; border: medium none; opacity: 0; left: 0px; display: block; max-height: none; transition: width 0s ease 0.4s, height 0s ease 0.4s, opacity 0.4s ease 0s, transform 0.4s ease 0s; transform: translate3d(0px, -50px, 0px); height: 50px; width: 0px;"></iframe><iframe id="mc-toast-container" style="bottom: 0px; right: 0px; padding: 0px; margin: 0px; z-index: 2147483640; position: fixed; border: medium none; opacity: 0; display: block; height: 0px; width: 0px;"></iframe><iframe id="mc-download-overlay-container" style="bottom: 0px; right: 0px; padding: 0px; margin: 0px; z-index: 2147483640; position: fixed; border: medium none; opacity: 0; display: block; height: 0px; width: 0px;"></iframe></body></html>
